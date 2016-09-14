@@ -1,0 +1,49 @@
+{
+  "name": "elmbp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint",
+    "dev": "better-npm-run dev",
+    "dev:hot": "better-npm-run dev:hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "betterScripts": {
+    "dev": {
+      "command": "webpack-dev-server",
+      "env": {
+        "NODE_ENV": "development",
+        "HMR": "disabled"
+      }
+    },
+    "dev:hot": {
+      "command": "webpack-dev-server",
+      "env": {
+        "NODE_ENV": "development",
+        "HMR": "enabled"
+      }
+    }
+  },
+  "keywords": [],
+  "author": "John <jomcode@gmail.com>",
+  "license": "ISC",
+  "engines": {
+    "node": ">=6.5.0"
+  },
+  "devDependencies": {
+    "better-npm-run": "0.0.11",
+    "concurrently": "^2.2.0",
+    "elm-hot-loader": "^0.3.4",
+    "elm-webpack-loader": "^3.0.6",
+    "eslint": "^3.5.0",
+    "eslint-config-standard": "^6.0.0",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.0",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.22.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1",
+    "webpack-merge": "^0.14.1"
+  }
+}
