@@ -2,12 +2,25 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const hmrPlugin = new webpack.HotModuleReplacementPlugin();
+
 const htmlPlugin = new HtmlWebpackPlugin({
   template: './src/index.html',
   chunksSortMode: 'dependency'
 });
 
+const definePlugin = new webpack.DefinePlugin({
+  'process.env': {
+    NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    HMR: JSON.stringify(process.env.HMR)
+  }
+});
+
+const METADATA = {
+  title: 'elmbp'
+};
+
 const config = {
+  metadata: METADATA,
   entry: {
     main: './src/index.js'
   },
@@ -37,6 +50,8 @@ const config = {
 };
 
 const plugins = [];
+
+plugins.push(definePlugin);
 
 plugins.push(htmlPlugin);
 
